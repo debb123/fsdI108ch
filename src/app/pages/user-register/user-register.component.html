@@ -57,7 +57,16 @@
 
         <div class="form-group row">
             <div class="col-8 offset-4">
-                <button (click)="save()" class="btn btn-info">Register User</button>
+                <button (click)="save()" [disabled]="!model.email
+                || !model.userName
+                || !model.password
+                || !model.password !=" class="btn btn-info">Register User</button>
+                <span  *ngif="savedAlertVisible" class="alert alert-success">
+                    The user has been registered!
+
+                    
+                </span>
+
 
             </div>
         </div>
