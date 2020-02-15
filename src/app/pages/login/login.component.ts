@@ -29,7 +29,10 @@ export class LoginComponent implements OnInit {
         return true;
       }
     }
+
+    console.log("Error, bad credentials!!");
   }
+
 
 
 
