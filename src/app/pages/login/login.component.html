@@ -17,8 +17,10 @@
         <div class="form-group row">
             <label class="col-3 form-group-label"> Password:</label>
             <div class="col-9">
-                <input class="form-control"[(ngModel)]="password" name="password">
-
+                <input type="password" class="form-control" [(ngModel)]="password" name="password">
+                <div *ngIf="loginError" class="alert alert-danger">          
+                    Login failed... please try again
+                  </div>
 
             </div>
         </div>
@@ -26,7 +28,9 @@
         <div class="form-group row">
             <div class="col-9 offset-3">
                 <button (click)="validatelogin()" class="btn btn-info">Login</button>
-
+                <span *ngIf="loginSucceed" class="alert alert-success">          
+                    You've logged in!
+                  </span>
             </div>
         </div>
 
